@@ -1,0 +1,4 @@
+mat-header-cell{background-color: black;color: white;text-align: center;font-size: 18px;}
+mat-cell{background-color: whitesmoke;}
+mat-form-field{display: block;}
+form{width: 70%;margin: auto;padding-bottom: 2.5rem;}

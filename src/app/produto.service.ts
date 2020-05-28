@@ -15,4 +15,9 @@ export class ProdutoService {
     return this.http.get<any[]>(`${this.produtosUrl}`);
   }
 
+  adicionar(produto: any)
+  {
+    return this.http.post(`${this.produtosUrl}`, `${produto}`);
+  }
+
 }
