@@ -1,19 +1,23 @@
 <form method="POST" #frm="ngForm" (ngSubmit)="adicionar(frm)">
-  <input type="hidden" [(ngModel)]="produto.Id" name="Id">
     <mat-form-field>
       <mat-label>Produto</mat-label>
-      <input matInput type="text" [(ngModel)]="produto.Produto" name="Produto" 
+      <input matInput type="text" [(ngModel)]="produto.produto" name="produto" 
           placeholder="Insira o nome do produto" required>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Preço</mat-label>
-      <input matInput type="number" [(ngModel)]="produto.Preco" name="Preco" 
+      <input matInput type="number" [(ngModel)]="produto.preco" name="preco" 
           placeholder="Insira o preço do produto" required>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Quantidade</mat-label>
-      <input matInput type="number" [(ngModel)]="produto.Quantidade" name="Quantidade" 
+      <input matInput type="number" [(ngModel)]="produto.quantidade" name="quantidade" 
           placeholder="Insira a quantidade" required>
+    </mat-form-field>    
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <input matInput type="number" [(ngModel)]="produto.categoriaId" name="categoriaId" 
+          placeholder="Insira o número da categoria" required>
     </mat-form-field>
     <br/>
     <button mat-raised-button color="primary" type="submit" [disabled]="frm.invalid">Salvar</button>

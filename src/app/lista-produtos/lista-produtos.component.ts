@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProdutoService } from '../produto.service';
-import { NgForm } from '@angular/forms';
+import { FormsModule, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -27,10 +27,12 @@ export class ListaProdutosComponent implements OnInit {
     this.produtoService.listar().subscribe(dados => this.produtos = dados);
   }
 
-  adicionar(frm:NgForm)
+  adicionar(frm: any)
   {
-    this.produtoService.adicionar(frm.value).subscribe(dados => {
-        frm.reset();
+    this.produtoService.adicionar(this.produto).subscribe(dados => {
+      this.produtos.push(dados);
+
+      frm.reset();
     });
   }
 

@@ -17,7 +17,11 @@ export class ProdutoService {
 
   adicionar(produto: any)
   {
-    return this.http.post(`${this.produtosUrl}`, `${produto}`);
+    return this.http.post(`${this.produtosUrl}`, JSON.stringify(produto), {
+      headers: {
+          'Content-Type': 'application/json'
+      }
+      });
   }
 
 }
